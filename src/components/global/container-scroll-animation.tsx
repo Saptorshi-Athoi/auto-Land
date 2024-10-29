@@ -11,7 +11,7 @@ export const ContainerScroll = ({
   const containerRef = useRef<any>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
-  })
+  }) 
   const [isMobile, setIsMobile] = React.useState(false)
 
   React.useEffect(() => {

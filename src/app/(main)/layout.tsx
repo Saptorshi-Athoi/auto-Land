@@ -1,6 +1,6 @@
 import React from 'react'
 import Sidebar from '../../components/sidebar/index'
-// import InfoBar from '@/components/infobar'
+import InfoBar from '../../components/infobar/index'
 
 type Props = { children: React.ReactNode }
 
@@ -10,6 +10,7 @@ const Layout = (props: Props) => {
       {/* <Sidebar /> */}
       <Sidebar/>
       <div className="w-full">
+      <InfoBar />
         {/* <InfoBar /> */}
         {props.children}
       </div>

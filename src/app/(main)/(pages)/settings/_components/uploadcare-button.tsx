@@ -1,10 +1,12 @@
 'use client'
 import React, { useEffect, useRef } from 'react'
+import { FileUploaderRegular } from '@uploadcare/react-uploader/next';
 import * as LR from '@uploadcare/blocks'
+import '@uploadcare/react-uploader/core.css';
 import { useRouter } from 'next/navigation'
 
 type Props = {
-  onUpload: (e: string) => any
+  onUpload: any
 }
 
 LR.registerBlocks(LR)

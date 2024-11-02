@@ -5,6 +5,7 @@ import "./globals.css";
 // import { ThemeProvider } from "@/providers/theme-provider"
 import { ThemeProvider } from "../providers/theme-provide";
 const font = DM_Sans({ subsets: ['latin'] })
+import { ClerkProvider } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
   title: "autoLand",
@@ -17,6 +18,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+    >
+
     <html lang="en">
       <body className={font.className}>
         <ThemeProvider
@@ -24,11 +29,12 @@ export default function RootLayout({
             defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
-          >
+            >
             {children}
         </ThemeProvider>
         {/* {children} */}
       </body>
     </html>
+  </ClerkProvider>
   );
 }

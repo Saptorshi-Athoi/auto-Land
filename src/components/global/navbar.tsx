@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { UserButton } from '@clerk/nextjs'
 import { MenuIcon } from 'lucide-react'
 
 const Navbar = async () => {
@@ -44,20 +45,19 @@ const Navbar = async () => {
                 </ul>
         </nav>
         <aside className="flex items-center gap-4">
-        <Link
-          href="/dashboard"
-        //   className="relative inline-flex h-10 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-        >
-          
-
-        <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-slate-400 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-          {/*WIP:wire up user */}
-          {true ? 'Dashboard' : 'Get Started'}
-        </button>
-        </Link>
-          {/*WIP:wire up user */}
+          <Link
+            href="/dashboard"
+          //   className="relative inline-flex h-10 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+          >
+            <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-full border border-slate-400 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+              {/*WIP:wire up user */}
+              {true ? 'Dashboard' : 'Get Started'}
+            </button>
+          </Link>
+            {/*WIP:wire up user */}
+          <UserButton/>
           <MenuIcon className='md:hidden'/>
-      </aside>
+        </aside>
     </header>
   )
 }

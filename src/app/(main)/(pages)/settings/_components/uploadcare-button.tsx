@@ -1,7 +1,11 @@
 'use client'
 import React, { useEffect, useRef } from 'react'
 import { FileUploaderRegular } from '@uploadcare/react-uploader/next';
-import * as LR from '@uploadcare/blocks'
+// import * as LR from '@uploadcare/blocks'
+import * as LR from '@uploadcare/file-uploader'
+
+LR.defineComponents(LR)
+
 import '@uploadcare/react-uploader/core.css';
 import { useRouter } from 'next/navigation'
 
@@ -9,7 +13,7 @@ type Props = {
   onUpload: any
 }
 
-LR.registerBlocks(LR)
+// LR.registerBlocks(LR)
 
 const UploadCareButton = ({ onUpload }: Props) => {
   const router = useRouter()
@@ -29,10 +33,10 @@ const UploadCareButton = ({ onUpload }: Props) => {
 
   return (
     <div>
-      <lr-config
-        ctx-name="my-uploader"
-        pubkey="a9428ff5ff90ae7a64eb"
-      />
+      <uc-config
+      ctx-name="my-uploader"
+      pubkey="YOUR_PUBLIC_KEY"
+    ></uc-config>
 
       <lr-file-uploader-regular
         ctx-name="my-uploader"

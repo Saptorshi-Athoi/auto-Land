@@ -21,20 +21,19 @@ export default function RootLayout({
     <ClerkProvider
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
     >
-
-    <html lang="en">
-      <body className={font.className}>
-        <ThemeProvider
+      <html lang="en">
+        <body className={font.className}>
+          <ThemeProvider
             attribute="class"
             defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
-            >
+          >
             {children}
-        </ThemeProvider>
-        {/* {children} */}
-      </body>
-    </html>
-  </ClerkProvider>
+          </ThemeProvider>
+          {/* {children} */}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
